@@ -1,4 +1,4 @@
-package main.arraysHashing.neetCode150;
+package main.arraysHashing.duplicateInteger;
 
 import java.util.HashSet;
 import java.util.Set;
