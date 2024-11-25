@@ -1,4 +1,4 @@
-package main.arraysHashing.duplicateInteger;
+package main.arrayshashing.duplicateInteger;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -26,7 +26,7 @@ public class SolutionHashSet {
 
     }
 
-    public static boolean hasDuplicate(int[] nums) {
+    private static boolean hasDuplicate(int[] nums) {
         Set<Integer> setNums = new HashSet<>();
         for (int num : nums) {
             if (!setNums.add(num)) { // The add method returns false if the element already exists

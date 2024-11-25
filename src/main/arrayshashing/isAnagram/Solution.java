@@ -1,4 +1,4 @@
-package main.arraysHashing.isAnagram;
+package main.arrayshashing.isAnagram;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +26,7 @@ public class Solution {
             isAnagram("jar", "jam"));
     }
 
-    public static boolean isAnagram(String s, String t) {
+    private static boolean isAnagram(String s, String t) {
         if(s.length() != t.length()){
             return false;
         }
