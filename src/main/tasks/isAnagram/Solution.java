@@ -1,4 +1,4 @@
-package main.arrayshashing.isAnagram;
+package main.tasks.isAnagram;
 
 import java.util.HashMap;
 import java.util.Map;

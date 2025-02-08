@@ -1,4 +1,4 @@
-package main.arrayshashing.validParentheses;
+package main.tasks.validParentheses;
 
 import java.util.ArrayList;
 import java.util.List;
