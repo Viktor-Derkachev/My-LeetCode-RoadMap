@@ -42,6 +42,8 @@ The number of nodes in the list is in the range [1, 105].
 1 <= Node.val <= 105
  */
 
+import main.tasks.util.ListNode;
+
 public class DeleteTheMiddleNodeOfALinkedListSolution {
     public static void main(String[] args) {
         ListNode head = ListNode.fromArray(new int[]{1, 3, 4, 7, 1, 2, 6});
@@ -81,40 +83,5 @@ public class DeleteTheMiddleNodeOfALinkedListSolution {
         current.next = current.next.next;
 
         return head;
-    }
-
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        public ListNode(int val) {
-            this.val = val;
-        }
-
-        public static ListNode fromArray(int[] values) {
-            if (values == null || values.length == 0) {
-                return null;
-            }
-            ListNode head = new ListNode(values[0]);
-            ListNode current = head;
-            for (int i = 1; i < values.length; i++) {
-                current.next = new ListNode(values[i]);
-                current = current.next;
-            }
-            return head;
-        }
-
-        @Override
-        public String toString() {
-            StringBuilder sb = new StringBuilder();
-            ListNode current = this;
-            while (current != null) {
-                sb.append(current.val).append(" -> ");
-                current = current.next;
-            }
-            sb.append("null");
-            return sb.toString();
-        }
     }
 }
