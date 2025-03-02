@@ -8,6 +8,9 @@ public class ListNode {
         this.val = val;
     }
 
+    public ListNode() {
+    }
+
     public static ListNode fromArray(int[] values) {
         if (values == null || values.length == 0) {
             return null;
