@@ -37,15 +37,15 @@ public class ReverseLinkedListSolution {
     }
 
     public static ListNode reverseList(ListNode head) {
-        if(head == null){
+        if (head == null) {
             return null;
         }
 
-        if(head.next == null){
+        if (head.next == null) {
             return head;
         }
 
-        if(head.next.next == null){
+        if (head.next.next == null) {
             ListNode newHead = head.next;
             head.next.next = head;
             head.next = null;
@@ -56,7 +56,7 @@ public class ReverseLinkedListSolution {
         ListNode current = head.next;
         prev.next = null;
 
-        while(current.next != null){
+        while (current.next != null) {
 
             ListNode tmp = current.next;
 
