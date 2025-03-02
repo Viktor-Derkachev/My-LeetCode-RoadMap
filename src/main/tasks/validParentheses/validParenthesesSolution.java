@@ -50,7 +50,7 @@ public class validParenthesesSolution {
         for (char character : characters) {
             if (character == '(' || character == '{' || character == '[') {
                 result.add(character);
-            }else  if(character == ')' || character == '}' || character == ']') {
+            } else if (character == ')' || character == '}' || character == ']') {
                 if (result.isEmpty()) {
                     return false;
                 }

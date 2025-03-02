@@ -41,11 +41,11 @@ public class TwoSumHashSolution {
         int target1 = 9;
         System.out.println("Output should be: [0,1], actually:" + Arrays.toString(twoSum(nums1, target1)));
 
-        int[] nums2 = new int[]{3,2,4};
+        int[] nums2 = new int[]{3, 2, 4};
         int target2 = 6;
         System.out.println("Output should be: [1,2], actually:" + Arrays.toString(twoSum(nums2, target2)));
 
-        int[] nums3 = new int[]{3,3};
+        int[] nums3 = new int[]{3, 3};
         int target3 = 6;
         System.out.println("Output should be: [0,1], actually:" + Arrays.toString(twoSum(nums3, target3)));
 

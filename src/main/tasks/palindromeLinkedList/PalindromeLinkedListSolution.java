@@ -24,35 +24,36 @@ The number of nodes in the list is in the range [1, 105].
  */
 public class PalindromeLinkedListSolution {
     public static void main(String[] args) {
-        ListNode head = ListNode.fromArray(new int[]{1,2,2,1});
-        ListNode head2 = ListNode.fromArray(new int[]{1,2});
-        ListNode head3 = ListNode.fromArray(new int[]{1,0,0});
+        ListNode head = ListNode.fromArray(new int[]{1, 2, 2, 1});
+        ListNode head2 = ListNode.fromArray(new int[]{1, 2});
+        ListNode head3 = ListNode.fromArray(new int[]{1, 0, 0});
 
         System.out.println(isPalindrome(head));
         System.out.println(isPalindrome(head2));
         System.out.println(isPalindrome(head3));
     }
+
     public static boolean isPalindrome(ListNode head) {
 
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return true;
         }
 
-        if(head.next.next == null){
+        if (head.next.next == null) {
             return head.val == head.next.val;
         }
 
         ListNode slow = head;
         ListNode fast = head;
 
-        while(fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
 
         ListNode prev = null;
 
-        while(slow != null){
+        while (slow != null) {
             ListNode nextNode = slow.next;
             slow.next = prev;
             prev = slow;
@@ -62,8 +63,8 @@ public class PalindromeLinkedListSolution {
         ListNode left = head;
         ListNode rigth = prev;
 
-        while(rigth != null && left != null){
-            if(rigth.val != left.val){
+        while (rigth != null && left != null) {
+            if (rigth.val != left.val) {
                 return false;
             }
             rigth = rigth.next;

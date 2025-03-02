@@ -20,37 +20,37 @@ public class Solution {
     public static void main(String[] args) {
 
         System.out.println("Input: s = \"racecar\", t = \"carrace\" should be true: " +
-            isAnagram("racecar", "carrace"));
+                isAnagram("racecar", "carrace"));
 
         System.out.println("Input: s = \"racecar\", t = \"carrace\" should be false: " +
-            isAnagram("jar", "jam"));
+                isAnagram("jar", "jam"));
     }
 
     private static boolean isAnagram(String s, String t) {
-        if(s.length() != t.length()){
+        if (s.length() != t.length()) {
             return false;
         }
 
         Map<Character, Integer> result = new HashMap<>();
 
         for (int i = 0; i < s.length(); i++) {
-            if(result.containsKey(s.charAt(i))){
-               Integer valueS = result.get(s.charAt(i));
-               valueS += 1;
-               if(valueS == 0){
-                   result.remove(s.charAt(i));
-               } else {
-                   result.put(s.charAt(i), valueS);
-               }
+            if (result.containsKey(s.charAt(i))) {
+                Integer valueS = result.get(s.charAt(i));
+                valueS += 1;
+                if (valueS == 0) {
+                    result.remove(s.charAt(i));
+                } else {
+                    result.put(s.charAt(i), valueS);
+                }
 
             } else {
                 result.put(s.charAt(i), 1);
             }
 
-            if(result.containsKey(t.charAt(i))){
+            if (result.containsKey(t.charAt(i))) {
                 Integer valueT = result.get(t.charAt(i));
                 valueT -= 1;
-                if(valueT == 0){
+                if (valueT == 0) {
                     result.remove(t.charAt(i));
                 } else {
                     result.put(t.charAt(i), valueT);
