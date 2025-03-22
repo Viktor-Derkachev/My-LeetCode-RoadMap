@@ -1,6 +1,8 @@
 package main.tasks.validParentheses;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 /**
@@ -41,6 +43,10 @@ public class validParenthesesSolution {
         System.out.println("Output should be: false, actually:" + isValid(example2));
         System.out.println("Output should be: true, actually:" + isValid(example3));
 
+        System.out.println("Output should be: true, actually:" + isValidByDeque(example1));
+        System.out.println("Output should be: false, actually:" + isValidByDeque(example2));
+        System.out.println("Output should be: true, actually:" + isValidByDeque(example3));
+
     }
 
     private static boolean isValid(String s) {
@@ -58,6 +64,35 @@ public class validParenthesesSolution {
                 if (last == '(' && character == ')' || last == '[' && character == ']' || last == '{' && character == '}') {
                     result.removeLast();
                 } else {
+                    return false;
+                }
+            }
+        }
+        return result.isEmpty();
+    }
+
+    //second solution by deque
+
+    public static boolean isValidByDeque(String s) {
+
+        Deque<Character> result = new ArrayDeque<>();
+        char[] characters = s.toCharArray();
+
+        for (char character : characters) {
+
+            if (character == '(' || character == '{' || character == '[') {
+                result.push(character);
+
+            } else if (character == ')' || character == '}' || character == ']') {
+                if (result.isEmpty()) {
+
+                    return false;
+                }
+                char last = result.peek();
+                if (last == '(' && character == ')' || last == '[' && character == ']' || last == '{' && character == '}') {
+                    result.pop();
+                } else {
+
                     return false;
                 }
             }
